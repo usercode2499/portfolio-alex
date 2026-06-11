@@ -239,8 +239,7 @@ const isOpen = ref(false);
 const isReady = ref(false);
 const isDark = ref(true);
 
-// TODO: replace with Alexander's real resume URL when ready.
-const resumeLink = 'https://your-resume-link-here.com';
+const resumeLink = 'https://docs.google.com/document/d/1efX0heP3RQCeXsaz8EZ-rIInXvRZ6yh349FjdD7T_3M/edit?tab=t.0';
 
 const sections = computed(() => [
   { id: "about", label: t("nav.about") },
