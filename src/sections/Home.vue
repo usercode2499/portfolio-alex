@@ -141,7 +141,7 @@ const words = [
   "Creative",
   "Prompt",
   "Crafting",
-  "Driven",
+  "Automate",
 ];
 
 const { t, locale } = useI18n();
