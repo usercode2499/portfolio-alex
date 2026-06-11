@@ -61,8 +61,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import profileImage from '@/assets/profile.jpg';
-import profileImageSmall from '@/assets/profile-1280.jpg';
+import profileImage from '@/assets/profile.png';
+import profileImageSmall from '@/assets/profile-1280.png';
 
 const { t } = useI18n();
 

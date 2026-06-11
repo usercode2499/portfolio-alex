@@ -6,27 +6,25 @@
     "projects": "Projects",
     "contact": "Contact",
     "home": "Home",
-    "resume": "Resume",
-    "resumeEnglish": "English",
-    "resumeJapanese": "Japanese"
+    "resume": "Resume"
   },
   "home": {
     "scrollDown": "SCROLL DOWN",
-    "words": ["Engineer", "Designer", "Builder", "WebDev", "Commit", "Creative", "Crafting", "Focused"],
-    "tagline": "Turning ideas into thoughtful web experiences",
+    "words": ["Designer", "Vibe Coder", "Builder", "WebDev", "Creative", "Shipper", "Crafting", "Driven"],
+    "tagline": "Designing websites and shipping them fast with AI-assisted vibe coding.",
     "cta": "Let's connect",
     "exploreCta": "Let's connect",
-    "role": "Front-End Engineer",
-    "subtitle": "Crafting fast, accessible web interfaces",
-    "location": "Based in Japan・Vue・Tailwind"
+    "role": "Web Designer & Vibe Coding",
+    "subtitle": "Designing sites and shipping them fast with AI-assisted workflows",
+    "location": "Claude Code・Gemini・GPT・WordPress・Elementor・Shopify"
   },
   "impact": {
-    "quote": "This portfolio is a snapshot of my problem-solving mindset, design decisions, and the way I turn ideas into reliable interfaces."
+    "quote": "This portfolio is a collection of things I've built, learned, and figured out along the way — from vibe coding with AI to shipping sites on WordPress, Shopify, and Vercel."
   },
   "about": {
     "title": "About me",
-    "paragraph1": "I'm Aman, a web developer focused on crafting clear, modern interfaces that balance design and functionality.",
-    "paragraph2": "With a background in creative work, I approach development with both logic and visual intention, designing digital experiences that are built to grow and adapt."
+    "paragraph1": "I'm Alexander. I fell in love with vibe coding — using AI tools like Claude Code, Gemini, Lovable, and ChatGPT to design and build things I once thought were out of reach.",
+    "paragraph2": "I craft sites on WordPress, Elementor, and Shopify, obsess over performance, and ship them to platforms like Vercel. Still learning. Always building."
   },
   "skills": {
     "title": "Skills",
@@ -43,7 +41,7 @@
   },
   "contact": {
     "title": "Conversation comes first",
-    "subtitle": "That's often where good things begin.",
+    "subtitle": "I'm Alexander, a builder who loves vibe coding with AI tools and designing clean websites. Let's talk.",
     "formTitle": "Open to opportunities",
     "nameLabel": "Name",
     "namePlaceholder": "How should I call you?",
@@ -69,47 +67,46 @@
     "github": "GITHUB",
     "linkedin": "LINKEDIN",
     "inquiry": "INQUIRY",
-    "location": "TOKYO, JAPAN: (GMT+9)",
+    "location": "BISLIG CITY, PH: (GMT+8)",
     "tagline": "DESIGNING WITH CODE",
     "rights": "All Rights Reserved.",
-    "name": "AMAN"
+    "name": "ALEXANDER"
   },
   "projects": {
-    "jlptLab": "JLPT Practice Lab",
-    "jlptLabSubtitle": "Interactive JLPT practice platform built from real exam patterns to make learning clearer and less stressful."
+    "jlptLab": "Hurdman AI Research",
+    "jlptLabSubtitle": "Daily AI experimentation and research used to explore new tools, workflows, and use cases for the team."
   },
   "projectDetail": {
     "back": "Back",
-    "status": "In Planning & Development",
-    "title": "JLPT Study Project",
+    "status": "Ongoing Research",
+    "title": "Hurdman AI Research",
     "sections": {
       "overview": {
         "title": "Project Overview",
-        "p1": "This project started from my own experience studying for and taking the JLPT N2.",
-        "p2": "While studying, I realized that memorizing grammar and kanji in isolation has its limits. No matter how much you memorize, without actually solving real JLPT questions, it's hard to see how grammar is used and how it's tested. There's so much you can only truly understand by encountering grammar within question passages and answer choices.",
-        "p3": "At the same time, going through full past exams every time isn't realistic either. With so many questions and the time they require, you can get exhausted before even starting to review. Especially when studying alongside work and daily life, long practice sessions can become stressful and lead to anxiety and tension.",
-        "p4": "These struggles inspired me to start this project."
+        "p1": "This project covers my ongoing work as an AI Researcher at Hurdman.",
+        "p2": "The goal is to explore what current AI tools can actually do in practice, beyond the marketing claims. That means using them daily, comparing models, and seeing how each one handles real workflows.",
+        "p3": "Instead of treating AI as a single tool, I look at it as a moving ecosystem where new capabilities and trade-offs appear every week. Tracking that change is part of the job.",
+        "p4": "The findings feed into how the team thinks about automation, content, and product direction."
       },
       "coreIdea": {
         "title": "Core Concept",
-        "p1": "At the heart of this project is the idea of learning and deepening understanding through past JLPT questions.",
-        "p2": "Rather than repeatedly solving full exam papers, the goal is to break past questions into small, manageable practice units where each question can be reviewed carefully. For each question, the platform clearly explains which grammar pattern is being used, why the correct answer is correct, and why the other options are wrong. The emphasis is on naturally understanding grammar patterns through problem-solving, rather than relying on memorization."
+        "p1": "At the heart of this work is a simple question: where does AI actually move the needle?",
+        "p2": "Rather than chasing every trend, the focus is on hands-on experimentation. I test tools against concrete tasks, compare outputs, document what works, and write up what doesn't. The aim is practical insight the team can use, not a hype recap."
       },
       "userFriendly": {
-        "title": "Designed with Usability in Mind",
-        "p1": "This project is designed based on my own struggles and difficulties during studying.",
-        "p2": "The layout is kept simple and easy to read, so learners can study calmly without unnecessary anxiety or stress. The aim is to create a comfortable learning experience where you can think, \"Let me just practice a little today,\" without feeling overwhelmed."
+        "title": "How It's Shared",
+        "p1": "The research is built to be easy to consume.",
+        "p2": "I create and edit short videos, written summaries, and side-by-side comparisons so the team can absorb findings quickly without having to run every experiment themselves. The format is designed to keep knowledge moving across the team."
       },
       "status": {
-        "title": "Current Development Status",
-        "p1": "This project is currently in its early stages of development.",
-        "p2": "While planning the overall site structure and practice flow, UI design is being refined in Figma. The current focus is on building a solid, practical practice experience using past JLPT questions."
+        "title": "Current Status",
+        "p1": "The research is ongoing and updated continuously.",
+        "p2": "New tools, models, and use cases are added as they appear, with priorities shifting based on what the team and product need most at any given time."
       },
       "purpose": {
         "title": "Project Purpose",
-        "p1": "This project aims to help JLPT learners understand how questions are constructed and face the exam with confidence. Reducing anxiety, learning with understanding, and approaching the real test calmly. That's the goal of this practical review platform."
+        "p1": "The purpose of this work is to keep Hurdman ahead of the curve on AI: which tools to adopt, which to skip, and how to apply them in ways that produce real, repeatable results."
       }
     }
   }
 }
-

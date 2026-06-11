@@ -76,6 +76,16 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import claudeLogo from '@/assets/claudelogo.png';
+import geminiLogo from '@/assets/geminilogo.png';
+import gptLogo from '@/assets/gptlogo.png';
+import wpLogo from '@/assets/wplogo.png';
+import elementorLogo from '@/assets/elementorlogo.png';
+import shopifyLogo from '@/assets/shopifylogo.png';
+import ghlLogo from '@/assets/ghllogo.png';
+import zapierLogo from '@/assets/zapierlogo.png';
+import vscodeLogo from '@/assets/vscodelogo.png';
+import cursorLogo from '@/assets/cursorlogo.png';
 
 const { t, tm, locale } = useI18n();
 const isJa = computed(() => locale.value === 'ja');
@@ -107,21 +117,20 @@ const flipWords = computed(() => {
 });
 
 const skills = [
+  { name: 'Claude Code', icon: claudeLogo },
+  { name: 'Cursor', icon: cursorLogo },
+  { name: 'VS Code', icon: vscodeLogo },
+  { name: 'Gemini', icon: geminiLogo },
+  { name: 'ChatGPT', icon: gptLogo },
+  { name: 'WordPress', icon: wpLogo },
+  { name: 'Elementor', icon: elementorLogo },
+  { name: 'Shopify', icon: shopifyLogo },
+  { name: 'GoHighLevel', icon: ghlLogo },
   { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
   { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-  { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'Framer Motion', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg' },
-  { name: 'Photoshop', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg' },
-  { name: 'Illustrator', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-original.svg' },
-  { name: 'Premiere Pro', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg' },
-  { name: 'After Effects', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg' },
-  { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+  { name: 'Vercel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg' },
+  { name: 'Zapier', icon: zapierLogo },
   { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-  { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-  { name: 'Netlify', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg' },
 ];
 
 const skillsSection = ref(null);

@@ -61,39 +61,7 @@
 
           <!-- Desktop resume + mobile toggle -->
           <div class="ml-auto flex items-center gap-3 lg:ml-0 lg:justify-self-end">
-            <!-- Language Switcher -->
-            <button
-              class="lang-switcher hidden lg:inline-flex items-center mr-3"
-              :class="isJa ? 'is-ja' : ''"
-              type="button"
-              aria-label="Switch language"
-              :aria-pressed="isJa"
-              @click="toggleLocale"
-              v-if="!isProjectPage"
-            >
-              <span class="lang-roll">
-                <span class="lang-roll-track">
-                  <span class="lang-roll-item">
-                    <svg class="lang-globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M2 12h20"/>
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    <span class="lang-text">EN</span>
-                  </span>
-                  <span class="lang-roll-item">
-                    <svg class="lang-globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M2 12h20"/>
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    <span class="lang-text">JA</span>
-                  </span>
-                </span>
-              </span>
-            </button>
-
-            <!-- Desktop Resume -->
+            <!-- Desktop theme toggle -->
             <label v-if="!isProjectPage" class="ui-switch hidden lg:inline-flex mr-5 desktop-switch">
               <input v-model="isDark" type="checkbox" aria-label="Toggle theme" />
               <div class="slider">
@@ -101,83 +69,26 @@
               </div>
             </label>
 
-            <!-- Desktop Resume Dropdown -->
-            <div
+            <!-- Desktop Resume Link -->
+            <a
               v-if="!isProjectPage"
-              class="resume-dropdown hidden lg:block relative"
-              ref="desktopResumeDropdown"
-              @mouseenter="setResumeHover(true)"
-              @mouseleave="setResumeHover(false)"
-              @focusin="openResumeDropdown"
-              @focusout="closeResumeDropdown"
+              :href="resumeLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resume-button group hidden lg:inline-block relative px-4 py-2 font-medium"
             >
-              <button
-                type="button"
-                class="group relative px-4 py-2 font-medium"
-                :class="{ 'is-open': isResumeDropdownActive }"
-                @keydown.escape="closeResumeDropdown"
-                aria-haspopup="true"
-                :aria-expanded="isResumeDropdownActive"
+              <span
+                class="absolute inset-0 h-full w-full translate-x-1 translate-y-1 bg-[color:var(--theme-resume-border)] transition duration-200 ease-out group-hover:translate-x-0 group-hover:translate-y-0"
+              ></span>
+              <span
+                class="absolute inset-0 h-full w-full border-2 border-[color:var(--theme-resume-border)] bg-[color:var(--theme-resume-bg)] transition-colors duration-200 group-hover:bg-[color:var(--theme-resume-hover-bg)]"
+              ></span>
+              <span
+                class="relative flex items-center gap-x-2 transition-colors duration-200 text-[color:var(--theme-resume-text)] group-hover:text-[color:var(--theme-resume-hover-text)]"
               >
-                <span
-                  class="absolute inset-0 h-full w-full translate-x-1 translate-y-1 bg-[color:var(--theme-resume-border)] transition duration-200 ease-out"
-                  :class="isResumeDropdownActive ? 'translate-x-0 translate-y-0' : 'group-hover:translate-x-0 group-hover:translate-y-0'"
-                ></span>
-                <span
-                  class="absolute inset-0 h-full w-full border-2 border-[color:var(--theme-resume-border)] bg-[color:var(--theme-resume-bg)] transition-colors duration-200"
-                  :class="isResumeDropdownActive ? 'bg-[color:var(--theme-resume-hover-bg)]' : 'group-hover:bg-[color:var(--theme-resume-hover-bg)]'"
-                ></span>
-                <span
-                  class="relative flex items-center gap-x-3 transition-colors duration-200"
-                  :class="isResumeDropdownActive ? 'text-[color:var(--theme-resume-hover-text)]' : 'text-[color:var(--theme-resume-text)] group-hover:text-[color:var(--theme-resume-hover-text)]'"
-                >
-                  <span class="resume-label">{{ t('nav.resume') }}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4 transition-transform duration-200"
-                    :class="{ 'rotate-180': isResumeDropdownActive }"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M6 9l6 6 6-6" />
-                  </svg>
-                </span>
-              </button>
-              <!-- Dropdown Menu -->
-              <div
-                class="resume-dropdown-menu absolute top-full left-0 w-full mt-1 overflow-hidden"
-                :class="isResumeDropdownActive ? 'is-visible' : ''"
-              >
-                <div class="resume-dropdown-content">
-                  <a
-                    :href="resumeLinks.en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="resume-dropdown-item group"
-                    @click.prevent="openResume(resumeLinks.en)"
-                    @keydown.escape="closeResumeDropdown"
-                  >
-                    <span class="resume-dropdown-item-bg"></span>
-                    <span class="resume-dropdown-item-text">{{ t('nav.resumeEnglish') }}</span>
-                  </a>
-                  <a
-                    :href="resumeLinks.ja"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="resume-dropdown-item group"
-                    @click.prevent="openResume(resumeLinks.ja)"
-                    @keydown.escape="closeResumeDropdown"
-                  >
-                    <span class="resume-dropdown-item-bg"></span>
-                    <span class="resume-dropdown-item-text">{{ t('nav.resumeJapanese') }}</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+                <span class="resume-label">{{ t('nav.resume') }}</span>
+              </span>
+            </a>
 
             <!-- Mobile menu toggle - Lottie Hamburger -->
           </div>
@@ -260,7 +171,7 @@
           </button>
         </li>
 
-        <!-- Mobile Resume Dropdown in Menu -->
+        <!-- Mobile Resume Link in Menu -->
         <li
           class="menu-item-animate mt-6"
           :class="[
@@ -270,70 +181,24 @@
             transitionDelay: isOpen ? `${200 + (mobileSections.length * 60)}ms` : '0ms'
           }"
         >
-          <div class="resume-dropdown-mobile" ref="mobileResumeDropdown">
-            <button
-              type="button"
-              class="group resume-link relative inline-block px-6 py-3 font-medium transition-transform duration-200"
-              :class="{ 'is-open': isMobileResumeDropdownOpen }"
-              @click="toggleMobileResumeDropdown"
-              aria-haspopup="true"
-              :aria-expanded="isMobileResumeDropdownOpen"
+          <a
+            :href="resumeLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group resume-link relative inline-block px-6 py-3 font-medium transition-transform duration-200"
+          >
+            <span
+              class="absolute inset-0 h-full w-full resume-layer resume-layer-shadow translate-x-1 translate-y-1 bg-[color:var(--theme-resume-border)] transition duration-200 ease-out group-hover:translate-x-0 group-hover:translate-y-0"
+            ></span>
+            <span
+              class="absolute inset-0 h-full w-full resume-layer resume-layer-base border-2 border-[color:var(--theme-resume-border)] bg-[color:var(--theme-resume-bg)] transition-colors duration-200 group-hover:bg-[color:var(--theme-resume-hover-bg)]"
+            ></span>
+            <span
+              class="relative flex items-center gap-x-2 transition-colors duration-200 text-[color:var(--theme-resume-text)] group-hover:text-[color:var(--theme-resume-hover-text)]"
             >
-              <span
-                class="absolute inset-0 h-full w-full resume-layer resume-layer-shadow translate-x-1 translate-y-1 bg-[color:var(--theme-resume-border)] transition duration-200 ease-out"
-                :class="isMobileResumeDropdownOpen ? 'translate-x-0 translate-y-0' : 'group-hover:translate-x-0 group-hover:translate-y-0'"
-              ></span>
-              <span
-                class="absolute inset-0 h-full w-full resume-layer resume-layer-base border-2 border-[color:var(--theme-resume-border)] bg-[color:var(--theme-resume-bg)] transition-colors duration-200"
-                :class="isMobileResumeDropdownOpen ? 'bg-[color:var(--theme-resume-hover-bg)]' : 'group-hover:bg-[color:var(--theme-resume-hover-bg)]'"
-              ></span>
-              <span
-                class="relative flex items-center gap-x-3 transition-colors duration-200"
-                :class="isMobileResumeDropdownOpen ? 'text-[color:var(--theme-resume-hover-text)]' : 'text-[color:var(--theme-resume-text)] group-hover:text-[color:var(--theme-resume-hover-text)]'"
-              >
-                <span class="resume-label">{{ t('nav.resume') }}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 transition-transform duration-200"
-                  :class="{ 'rotate-180': isMobileResumeDropdownOpen }"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </span>
-            </button>
-            <!-- Mobile Dropdown Menu -->
-            <div
-              class="resume-dropdown-menu-mobile mt-3"
-              :class="isMobileResumeDropdownOpen ? 'is-visible' : ''"
-            >
-              <div class="flex flex-col gap-2">
-                <a
-                  :href="resumeLinks.en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="resume-dropdown-item-mobile"
-                  @click.prevent="openResume(resumeLinks.en, true)"
-                >
-                  {{ t('nav.resumeEnglish') }}
-                </a>
-                <a
-                  :href="resumeLinks.ja"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="resume-dropdown-item-mobile"
-                  @click.prevent="openResume(resumeLinks.ja, true)"
-                >
-                  {{ t('nav.resumeJapanese') }}
-                </a>
-              </div>
-            </div>
-          </div>
+              <span class="resume-label">{{ t('nav.resume') }}</span>
+            </span>
+          </a>
         </li>
 
         <!-- Mobile Theme Switch -->
@@ -347,37 +212,6 @@
           }"
         >
           <div class="flex items-center justify-center gap-6">
-            <!-- Mobile Language Switcher -->
-            <button
-              class="lang-switcher inline-flex items-center"
-              :class="isJa ? 'is-ja' : ''"
-              type="button"
-              aria-label="Switch language"
-              :aria-pressed="isJa"
-              @click="toggleLocale"
-            >
-              <span class="lang-roll">
-                <span class="lang-roll-track">
-                  <span class="lang-roll-item">
-                    <svg class="lang-globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M2 12h20"/>
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    <span class="lang-text">EN</span>
-                  </span>
-                  <span class="lang-roll-item">
-                    <svg class="lang-globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M2 12h20"/>
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    <span class="lang-text">JA</span>
-                  </span>
-                </span>
-              </span>
-            </button>
-
             <label class="ui-switch inline-flex">
               <input v-model="isDark" type="checkbox" aria-label="Toggle theme" />
               <div class="slider">
@@ -404,16 +238,9 @@ const hasShadow = ref(false);
 const isOpen = ref(false);
 const isReady = ref(false);
 const isDark = ref(true);
-const isResumeDropdownOpen = ref(false);
-const isResumeDropdownHovering = ref(false);
-const isMobileResumeDropdownOpen = ref(false);
-const desktopResumeDropdown = ref(null);
-const mobileResumeDropdown = ref(null);
 
-const resumeLinks = {
-  en: '/resume/resume-en.pdf',
-  ja: '/resume/resume-ja.pdf',
-};
+// TODO: replace with Alexander's real resume URL when ready.
+const resumeLink = 'https://your-resume-link-here.com';
 
 const sections = computed(() => [
   { id: "about", label: t("nav.about") },
@@ -435,65 +262,12 @@ let menuAnim = null;
 let menuBgAnim = null;
 let endFrame = 0;
 const themeKey = "theme";
-const localeKey = "locale";
 
-const { t, locale } = useI18n();
-const isJa = computed(() => locale.value === "ja");
-const isResumeDropdownActive = computed(
-  () => isResumeDropdownOpen.value || isResumeDropdownHovering.value
-);
+const { t } = useI18n();
 const router = useRouter();
 const route = useRoute();
 const isProjectPage = computed(() => route.name === "project-progress" || route.path.startsWith("/projects"));
 const startPageTransition = inject("startPageTransition", null);
-
-const toggleLocale = () => {
-  locale.value = isJa.value ? "en" : "ja";
-  localStorage.setItem(localeKey, locale.value);
-  document.documentElement.setAttribute("lang", locale.value);
-};
-
-// Resume dropdown functions
-const openResumeDropdown = () => {
-  isResumeDropdownOpen.value = true;
-};
-
-const closeResumeDropdown = () => {
-  isResumeDropdownOpen.value = false;
-};
-
-const setResumeHover = (next) => {
-  isResumeDropdownHovering.value = next;
-};
-
-const toggleMobileResumeDropdown = () => {
-  isMobileResumeDropdownOpen.value = !isMobileResumeDropdownOpen.value;
-};
-
-const closeMobileResumeDropdown = () => {
-  isMobileResumeDropdownOpen.value = false;
-};
-
-const openResume = (url, isMobile = false) => {
-  const newTab = window.open(url, "_blank", "noopener,noreferrer");
-  if (newTab) {
-    newTab.opener = null;
-  }
-  if (isMobile) {
-    closeMobileResumeDropdown();
-  } else {
-    closeResumeDropdown();
-  }
-};
-
-const handleClickOutside = (event) => {
-  if (desktopResumeDropdown.value && !desktopResumeDropdown.value.contains(event.target)) {
-    isResumeDropdownOpen.value = false;
-  }
-  if (mobileResumeDropdown.value && !mobileResumeDropdown.value.contains(event.target)) {
-    isMobileResumeDropdownOpen.value = false;
-  }
-};
 
 const applyTheme = () => {
   const theme = isDark.value ? "dark" : "light";
@@ -518,10 +292,6 @@ const playIcon = (open) => {
 
 const handleScroll = () => {
   hasShadow.value = window.scrollY > 0;
-  // Close dropdown on scroll
-  if (isResumeDropdownOpen.value) {
-    isResumeDropdownOpen.value = false;
-  }
 };
 
 const handleResize = () => {
@@ -589,7 +359,7 @@ const scrollToSection = (id) => {
 };
 
 onMounted(async () => {
-  document.documentElement.setAttribute("lang", locale.value);
+  document.documentElement.setAttribute("lang", "en");
   const storedTheme = localStorage.getItem(themeKey);
   if (storedTheme === "dark" || storedTheme === "light") {
     isDark.value = storedTheme === "dark";
@@ -600,7 +370,6 @@ onMounted(async () => {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
   window.addEventListener("resize", handleResize, { passive: true });
-  document.addEventListener("click", handleClickOutside);
 
   handleScroll();
   handleResize();
@@ -660,15 +429,12 @@ watch(isOpen, (open) => {
     menuBgAnim.play();
   } else {
     menuBgAnim.pause();
-    // Close mobile resume dropdown when menu closes
-    isMobileResumeDropdownOpen.value = false;
   }
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
   window.removeEventListener("resize", handleResize);
-  document.removeEventListener("click", handleClickOutside);
 
   menuAnim?.destroy();
   menuAnim = null;

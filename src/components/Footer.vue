@@ -7,7 +7,7 @@
 
       <div class="footer-socials">
         <a
-          href="https://github.com/amanrai00"
+          href="https://github.com/usercode2499"
           target="_blank"
           rel="noopener noreferrer"
           class="footer-social-link footer-social-link--roll"
@@ -26,7 +26,7 @@
           </span>
         </a>
         <a
-          href="https://www.linkedin.com/in/amanrai00/"
+          href="https://www.linkedin.com/in/alexander-bongo-927178373/"
           target="_blank"
           rel="noopener noreferrer"
           class="footer-social-link footer-social-link--roll"
@@ -45,7 +45,7 @@
           </span>
         </a>
         <a
-          href="mailto:amanrai1630@gmail.com"
+          href="mailto:arekusanda.bongo@gmail.com"
           class="footer-social-link footer-social-link--roll"
         >
           <span class="oh oh--social">
@@ -78,7 +78,7 @@
         </div>
         <div class="footer-bottom-right">
           <span class="oh"><span>&copy; {{ t('footer.rights') }}</span></span>
-          <span class="oh"><span>{{ currentYear }} Aman Rai</span></span>
+          <span class="oh"><span>{{ currentYear }} Alexander Bongo</span></span>
         </div>
       </div>
     </footer>
@@ -107,7 +107,7 @@ let revealTrigger = null;
 function updateTime() {
   const now = new Date();
   const timeValue = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Tokyo',
+    timeZone: 'Asia/Manila',
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,

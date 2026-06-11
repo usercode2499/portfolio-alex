@@ -6,7 +6,7 @@
   >
     <div
       ref="imagePreview"
-      class="project-image-preview absolute w-80 h-65 rounded-lg overflow-hidden opacity-0 pointer-events-none z-100"
+      class="project-image-preview absolute rounded-lg overflow-hidden opacity-0 pointer-events-none z-100"
       :class="{ 'is-visible': hoveredIndex !== null }"
     >
       <img
@@ -14,7 +14,7 @@
         :key="project.id"
         :src="project.image"
         :alt="project.title"
-        class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-400"
+        class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-400"
         :class="{ 'is-active': hoveredIndex === index }"
         :width="project.width"
         :height="project.height"
@@ -75,15 +75,15 @@
 </template>
 
 <script setup>
-import { computed, inject, nextTick, onMounted, onUnmounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import progress1Img from '@/assets/progress1.jpg';
-import progress1ImgSmall from '@/assets/progress1-1280.jpg';
+import project1Img from '@/assets/project1.png';
+import project2Img from '@/assets/project2.png';
+import project3Img from '@/assets/project3.png';
+import project4Img from '@/assets/project4.png';
+import project5Img from '@/assets/project5.png';
 
 const { t } = useI18n();
-const router = useRouter();
-const startPageTransition = inject('startPageTransition', null);
 const projectsSection = ref(null);
 const projectItems = ref([]);
 const titleAnimEls = ref([]);
@@ -114,12 +114,53 @@ const resetTitleAnim = (index) => {
 const projects = computed(() => [
   {
     id: 1,
-    title: t('projects.jlptLab'),
-    tags: [t('projects.jlptLabSubtitle')],
-    image: progress1Img,
-    imageMobile: progress1ImgSmall,
-    width: 4500,
-    height: 4500
+    title: 'Tweetmax',
+    url: 'https://www.tweetmax.io/',
+    tags: ['Web Design', 'Vibe Coding'],
+    image: project1Img,
+    imageMobile: project1Img,
+    width: 1600,
+    height: 1000
+  },
+  {
+    id: 2,
+    title: 'Metro Lawn Rehab',
+    url: 'https://metrolawnrehab.com/',
+    tags: ['WordPress', 'Elementor'],
+    image: project2Img,
+    imageMobile: project2Img,
+    width: 1600,
+    height: 1000
+  },
+  {
+    id: 3,
+    title: 'Southside Services',
+    url: 'https://southsideservicestc.com/',
+    tags: ['WordPress', 'Elementor'],
+    image: project3Img,
+    imageMobile: project3Img,
+    width: 1600,
+    height: 1000
+  },
+  {
+    id: 4,
+    title: 'Spicy Wear',
+    url: 'https://spicywear.com/',
+    tags: ['Shopify', 'eCommerce'],
+    image: project4Img,
+    imageMobile: project4Img,
+    width: 1600,
+    height: 1000
+  },
+  {
+    id: 5,
+    title: 'Altaview Arch',
+    url: 'https://altaviewarch.com/',
+    tags: ['WordPress', 'Elementor'],
+    image: project5Img,
+    imageMobile: project5Img,
+    width: 1600,
+    height: 1000
   }
 ]);
 
@@ -286,15 +327,10 @@ const handleListLeave = () => {
 };
 
 const goToProject = (project) => {
-  if (!project) return;
-  const fromSection = projectsSection.value?.id || "projects";
-  const navigate = () => {
-    router.push({ name: "project-progress", query: { from: fromSection } });
-  };
-  if (startPageTransition) {
-    startPageTransition(navigate);
-  } else {
-    navigate();
+  if (!project?.url) return;
+  const newTab = window.open(project.url, "_blank", "noopener,noreferrer");
+  if (newTab) {
+    newTab.opener = null;
   }
 };
 
@@ -503,7 +539,10 @@ onUnmounted(() => {
 
 .project-image-preview {
   right: clamp(1rem, 5vw, 4rem);
-  transform: translateX(1.75rem) translateY(-50%) skewX(-8deg) scale(0.85);
+  width: 420px;
+  height: 263px;
+  background: var(--project-image-overlay);
+  transform: translateY(-50%) scale(0.92);
   transform-origin: right center;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -513,7 +552,7 @@ onUnmounted(() => {
 
 .project-image-preview.is-visible {
   opacity: 1;
-  transform: translateX(1.75rem) translateY(-50%) skewX(-8deg) scale(1);
+  transform: translateY(-50%) scale(1);
 }
 
 .project-image-preview img.is-active {
@@ -548,8 +587,8 @@ onUnmounted(() => {
 
 @media (max-width: 1024px) {
   .project-image-preview {
-    width: 260px;
-    height: 210px;
+    width: 320px;
+    height: 200px;
   }
 }
 

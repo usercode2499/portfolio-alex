@@ -83,17 +83,17 @@
     >
       <a
         class="social-item group"
-        href="mailto:amanrai1630@gmail.com"
+        href="mailto:arekusanda.bongo@gmail.com"
         aria-label="Email"
       >
         <span class="social-circle">
           <i class="bi bi-envelope-at text-lg"></i>
         </span>
-        <span class="social-label">amanrai1630@gmail.com</span>
+        <span class="social-label">arekusanda.bongo@gmail.com</span>
       </a>
       <a
         class="social-item group"
-        href="https://www.linkedin.com/in/amanrai00/"
+        href="https://www.linkedin.com/in/alexander-bongo-927178373/"
         aria-label="LinkedIn"
         target="_blank"
         rel="noopener noreferrer"
@@ -101,11 +101,11 @@
         <span class="social-circle">
           <i class="bi bi-linkedin text-lg"></i>
         </span>
-        <span class="social-label">aman</span>
+        <span class="social-label">alexander-bongo</span>
       </a>
       <a
         class="social-item group"
-        href="https://github.com/amanrai00"
+        href="https://github.com/usercode2499"
         aria-label="GitHub"
         target="_blank"
         rel="noopener noreferrer"
@@ -113,7 +113,7 @@
         <span class="social-circle">
           <i class="bi bi-github text-lg"></i>
         </span>
-        <span class="social-label">amanrai</span>
+        <span class="social-label">usercode2499</span>
       </a>
     </aside>
   </section>
@@ -133,14 +133,14 @@ const CONTACT_FADE_MOBILE_MULTIPLIER = 7;
 const DESKTOP_BREAKPOINT = 1024;
 const TABLET_MAX = 768;
 const words = [
-  "Engineer",
   "Designer",
+  "VibeCode",
   "Builder",
   "WebDev",
-  "Commit",
   "Creative",
+  "Prompt",
   "Crafting",
-  "Focused",
+  "Driven",
 ];
 
 const { t, locale } = useI18n();

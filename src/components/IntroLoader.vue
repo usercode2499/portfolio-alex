@@ -9,11 +9,11 @@
     </div>
     <div class="intro-title" :class="{ 'is-ready': isTitleReady }" ref="titleEl">
       <div class="title-row">
-        <div class="title-charts-cont"><span ref="seg1">A</span></div>
-        <div class="title-charts-cont"><span ref="seg2">MAN</span></div>
+        <div class="title-charts-cont"><span ref="seg1">ALEX</span></div>
+        <div class="title-charts-cont"><span ref="seg2">ANDER</span></div>
         <div class="title-space">&nbsp;</div>
-        <div class="title-charts-cont"><span ref="seg3">R</span></div>
-        <div class="title-charts-cont"><span ref="seg4">AI</span></div>
+        <div class="title-charts-cont"><span ref="seg3">BO</span></div>
+        <div class="title-charts-cont"><span ref="seg4">NGO</span></div>
       </div>
     </div>
   </div>
