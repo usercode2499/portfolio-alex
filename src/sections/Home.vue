@@ -32,11 +32,11 @@
     <div ref="heroTextEl" class="mx-auto flex w-full max-w-6xl flex-col gap-12 lg:flex-row lg:items-center lg:gap-16">
       <div class="flex-[1.2] min-w-0 flex flex-col lg:justify-center">
         <h1 class="mx-auto w-full text-center font-extrabold uppercase leading-[0.9] text-[color:var(--theme-text-strong)] lg:mt-0">
-          <span class="block overflow-hidden" style="min-height: clamp(2.6rem, 9vw, 6rem);">
+          <span class="block overflow-hidden" style="min-height: clamp(2.6rem, 9vw, 7rem);">
             <span
               :key="currentWord"
               class="inline-block w-full max-w-full text-center whitespace-nowrap word-rotator bg-gradient-to-b from-[color:var(--theme-headline-from)] via-[color:var(--theme-headline-via)] to-[color:var(--theme-headline-to)] text-transparent bg-clip-text"
-              style="font-size: clamp(2.2rem, 8.5vw, 5.5rem); letter-spacing: clamp(0.04em, 0.6vw, 0.14em);"
+              style="font-size: clamp(2.2rem, 8.5vw, 6.5rem); letter-spacing: clamp(0.04em, 0.6vw, 0.14em);"
             >
               {{ currentWord }}
             </span>
