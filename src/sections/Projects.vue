@@ -82,6 +82,7 @@ import project2Img from '@/assets/project2.png';
 import project3Img from '@/assets/project3.png';
 import project4Img from '@/assets/project4.png';
 import project5Img from '@/assets/project5.png';
+import project6Img from '@/assets/project6.png';
 
 const { t } = useI18n();
 const projectsSection = ref(null);
@@ -159,6 +160,16 @@ const projects = computed(() => [
     tags: ['WordPress', 'Elementor'],
     image: project5Img,
     imageMobile: project5Img,
+    width: 1600,
+    height: 1000
+  },
+  {
+    id: 6,
+    title: 'Brew Side Café',
+    url: 'https://brewside-dashboard.vercel.app/',
+    tags: ['Messenger Bot', 'ManyChat', 'Ordering'],
+    image: project6Img,
+    imageMobile: project6Img,
     width: 1600,
     height: 1000
   }
