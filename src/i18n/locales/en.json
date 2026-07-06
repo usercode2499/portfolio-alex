@@ -35,8 +35,8 @@
   "statement": {
     "dividerText": "Each project shaped",
     "dividerText2": "how I work today.",
-    "selected": "SELECTED",
-    "projects": "PROJECTS",
+    "selected": "PROJECT",
+    "projects": "SHOWCASE",
     "showcase": "SHOWCASE"
   },
   "contact": {
