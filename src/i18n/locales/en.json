@@ -10,21 +10,21 @@
   },
   "home": {
     "scrollDown": "SCROLL DOWN",
-    "words": ["Designer", "Vibe Coder", "Builder", "WebDev", "Creative", "Shipper", "Crafting", "Automate"],
-    "tagline": "Designing websites and shipping them fast with AI-assisted vibe coding.",
+    "words": ["Automation", "AI Research", "Chatbots", "Workflows", "WordPress", "Builder", "Shipper", "Problem Solver"],
+    "tagline": "I build systems that remove repetitive work, from ordering chatbots to CRM funnels and automated publishing.",
     "cta": "Let's connect",
     "exploreCta": "Let's connect",
-    "role": "Web Designer ・ AI Dev・ Automation",
-    "subtitle": "I build, automate, and ship — from design to deployment, fast.",
-    "location": "WordPress · Elementor · Shopify · GHL · Zapier · Claude · Gemini · GPT"
+    "role": "AI Automation Specialist ・ Web Developer ・ AI Researcher",
+    "subtitle": "I build, automate and ship, from design to deployment.",
+    "location": "ManyChat · GoHighLevel · Zapier · Pabbly · WordPress · Claude · Gemini · GPT"
   },
   "impact": {
-    "quote": "This portfolio is a collection of real work — websites built for real clients, automations that actually run, and projects shipped with modern AI-assisted workflows."
+    "quote": "This portfolio is a collection of real work: websites built for real clients, automations that actually run, and systems that save people time."
   },
   "about": {
     "title": "About me",
-    "paragraph1": "I'm Alexander. I build with AI tools like Claude Code, Gemini, Lovable, and ChatGPT — turning ideas into working websites and automation systems I once thought were out of reach.",
-    "paragraph2": "I craft sites on WordPress, Elementor, and Shopify, obsess over performance, and ship them to platforms like Vercel. Still learning. Always building."
+    "paragraph1": "I'm Alexander, an AI automation specialist and web developer. I like solving problems by building systems that remove repetitive manual work, such as a chatbot that takes orders or a workflow that moves leads into a CRM. I also work as an AI Researcher at Hurdman, Inc.",
+    "paragraph2": "I connect platforms with ManyChat, GoHighLevel, Zapier and Pabbly, and I build sites with WordPress, Elementor and Shopify. I also write the SOPs and documentation that help teams use new tools. Still learning. Always building."
   },
   "skills": {
     "title": "Skills",
@@ -41,7 +41,7 @@
   },
   "contact": {
     "title": "Conversation comes first",
-    "subtitle": "I'm Alexander, a builder who loves vibe coding with AI tools and designing clean websites. Let's talk.",
+    "subtitle": "I'm Alexander, an automation specialist and web developer. Tell me what you would like to improve, and let's talk.",
     "formTitle": "Open to opportunities",
     "nameLabel": "Name",
     "namePlaceholder": "How should I call you?",
@@ -68,13 +68,13 @@
     "linkedin": "LINKEDIN",
     "inquiry": "INQUIRY",
     "location": "BISLIG CITY, PH: (GMT+8)",
-    "tagline": "DESIGNING WITH CODE",
+    "tagline": "AUTOMATING THE BORING PARTS",
     "rights": "All Rights Reserved.",
     "name": "ALEXANDER"
   },
   "projects": {
     "jlptLab": "Hurdman AI Research",
-    "jlptLabSubtitle": "Daily AI experimentation and research used to explore new tools, workflows, and use cases for the team."
+    "jlptLabSubtitle": "Daily AI testing and research to find which tools, workflows and use cases really work for the team, with SOPs and guides to match."
   },
   "projectDetail": {
     "back": "Back",
@@ -83,29 +83,29 @@
     "sections": {
       "overview": {
         "title": "Project Overview",
-        "p1": "This project covers my ongoing work as an AI Researcher at Hurdman.",
-        "p2": "The goal is to explore what current AI tools can actually do in practice, beyond the marketing claims. That means using them daily, comparing models, and seeing how each one handles real workflows.",
-        "p3": "Instead of treating AI as a single tool, I look at it as a moving ecosystem where new capabilities and trade-offs appear every week. Tracking that change is part of the job.",
-        "p4": "The findings feed into how the team thinks about automation, content, and product direction."
+        "p1": "This project covers my ongoing work as an AI Researcher at Hurdman, Inc.",
+        "p2": "The goal is to find out what current AI tools can really do in practice, beyond the marketing claims. That means using them daily, comparing models, and seeing how each one handles real workflows.",
+        "p3": "Instead of treating AI as a single tool, I see it as a fast-moving ecosystem where new capabilities and trade-offs appear every week. Tracking that change is part of the job.",
+        "p4": "The findings shape how the team thinks about automation, content and product direction."
       },
       "coreIdea": {
         "title": "Core Concept",
-        "p1": "At the heart of this work is a simple question: where does AI actually move the needle?",
-        "p2": "Rather than chasing every trend, the focus is on hands-on experimentation. I test tools against concrete tasks, compare outputs, document what works, and write up what doesn't. The aim is practical insight the team can use, not a hype recap."
+        "p1": "At the heart of this work is a simple question: where does AI really make a difference?",
+        "p2": "Rather than chasing every trend, I focus on hands-on testing. I try tools on concrete tasks, compare the results, and document what works and what doesn't. The aim is practical insight the team can use, not a hype recap."
       },
       "userFriendly": {
         "title": "How It's Shared",
-        "p1": "The research is built to be easy to consume.",
-        "p2": "I create and edit short videos, written summaries, and side-by-side comparisons so the team can absorb findings quickly without having to run every experiment themselves. The format is designed to keep knowledge moving across the team."
+        "p1": "The research is built to be easy to use.",
+        "p2": "I create short videos, written summaries, side-by-side comparisons and step-by-step SOPs, so the team can understand the findings and repeat the workflows without running every experiment themselves."
       },
       "status": {
         "title": "Current Status",
         "p1": "The research is ongoing and updated continuously.",
-        "p2": "New tools, models, and use cases are added as they appear, with priorities shifting based on what the team and product need most at any given time."
+        "p2": "New tools, models and use cases are added as they appear, and priorities change based on what the team and product need most at the time."
       },
       "purpose": {
         "title": "Project Purpose",
-        "p1": "The purpose of this work is to keep Hurdman ahead of the curve on AI: which tools to adopt, which to skip, and how to apply them in ways that produce real, repeatable results."
+        "p1": "The purpose of this work is to keep Hurdman ahead on AI: which tools to adopt, which to skip, and how to use them to get real, repeatable results."
       }
     }
   }
